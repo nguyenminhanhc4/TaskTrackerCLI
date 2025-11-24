@@ -1,4 +1,7 @@
-import java.util.*;
+import java.util.ArrayList;
+import java.util.HashMap;
+import java.util.List;
+import java.util.Map;
 
 public class JsonUtils {
 
@@ -25,13 +28,7 @@ public class JsonUtils {
                 map.put(key, val);
             }
 
-            tasks.add(new Task(
-                    Integer.parseInt(map.get("id")),
-                    map.get("description"),
-                    map.get("status"),
-                    map.get("createdAt"),
-                    map.get("updatedAt")
-            ));
+            tasks.add(new Task(Integer.parseInt(map.get("id")), map.get("description"), map.get("status"), map.get("createdAt"), map.get("updatedAt")));
         }
 
         return tasks;
@@ -43,13 +40,7 @@ public class JsonUtils {
 
         for (int i = 0; i < tasks.size(); i++) {
             Task t = tasks.get(i);
-            sb.append("{")
-                    .append("\"id\":\"" + t.id + "\",")
-                    .append("\"description\":\"" + t.description + "\",")
-                    .append("\"status\":\"" + t.status + "\",")
-                    .append("\"createdAt\":\"" + t.createdAt + "\",")
-                    .append("\"updatedAt\":\"" + t.updatedAt + "\"")
-                    .append("}");
+            sb.append("{").append("\"id\":\"").append(t.id).append("\",").append("\"description\":\"").append(t.description).append("\",").append("\"status\":\"").append(t.status).append("\",").append("\"createdAt\":\"").append(t.createdAt).append("\",").append("\"updatedAt\":\"").append(t.updatedAt).append("\"").append("}");
             if (i < tasks.size() - 1) sb.append(",");
         }
 
