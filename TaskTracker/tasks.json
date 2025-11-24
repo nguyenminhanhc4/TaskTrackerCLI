@@ -1,9 +1,1 @@
-[
-  {
-    "id": "1",
-    "description": "Buy groceries",
-    "status": "todo",
-    "createdAt": "2025-11-24T08:55:59.292600900",
-    "updatedAt": "2025-11-24T08:55:59.292600900"
-  }
-]
+[{"id":"1","description":"Buy apples","status":"todo","createdAt":"2025-11-24T09","updatedAt":"2025-11-24T09"},{"id":"2","description":"Buy groceries","status":"todo","createdAt":"2025-11-24T09:04:52.103802300","updatedAt":"2025-11-24T09:04:52.103802300"}]

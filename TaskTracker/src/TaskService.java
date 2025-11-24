@@ -11,7 +11,12 @@ public class TaskService {
 
     public void add(String description) {
         List<Task> tasks = repo.load();
-        int id = tasks.isEmpty() ? 1 : tasks.get(tasks.size() - 1).id + 1;
+        int maxId = tasks.stream()
+                .mapToInt(t -> t.id)
+                .max()
+                .orElse(0);
+
+        int id = maxId + 1;
 
         LocalDateTime now = LocalDateTime.now();
 
